@@ -13,7 +13,7 @@ export class ProjectsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  add(): Observable<Project[]> {
+  all(): Observable<Project[]> {
     return this.httpClient.get<Project[]>(this.getUrl());
   }
 
