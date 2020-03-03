@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Project, ProjectsService } from '@bb/core-data';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { combineAll } from 'rxjs/operators';
 
 @Component({
   selector: 'bb-projects',
@@ -61,6 +62,7 @@ export class ProjectsComponent implements OnInit {
   select(project: Project) {
     this.project = project;
     this.form.patchValue(project);
+    console.log('Project:', project)
   }
 
   ngOnInit(): void {
